@@ -24,12 +24,13 @@ export class HeroPageComponent implements OnInit {
   getHero(): void{
     this.heroesService.getHeroById(this.id).pipe(delay(500)).subscribe((hero) => {
       if( !hero) return this.router.navigate(['/heroes']);
-
       this.hero = hero;
       console.log(this.hero);
       return;
     });
   }
+
+  
 
   goBack(): void{
     this.router.navigateByUrl('heroes/list');
